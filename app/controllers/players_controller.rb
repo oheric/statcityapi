@@ -3,11 +3,12 @@ before_action :set_player, only: [:destroy]
 
 	def index
 		@players = Player.all
+		@player = Player.new
 		
 	end
 
 	def new
-		@player = Player.new
+		
 	end
 
 	def create

@@ -1,11 +1,4 @@
 <h1>Name of Players</h1>
-
-<% @players.each do |p| %>
-	<div>Name: <%= p.name %></div><br>
-	<div>Player Id: <%= p.yahooid %></div><br>
-	<div>Cost: <%= p.cost %></div>
-	<% end %>
-
 	
 	<table>
   <thead>
@@ -30,3 +23,25 @@
     <% end %>
   </tbody>
 </table>
+
+<h2>Name a New Player</h2>
+	<%= form_for @player do |f| %>
+
+	<div class="field">
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</div><br>
+
+	<div class="field">
+		<%= f.label :yahooid %><br>
+		<%= f.text_field :yahooid %>
+	</div><br>
+	<div class="field">
+		<%= f.label :cost %><br>
+		<%= f.text_field :cost %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+	<%end %>
