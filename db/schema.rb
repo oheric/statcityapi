@@ -11,29 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141212233155) do
+ActiveRecord::Schema.define(version: 20141213001546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "costs", force: true do |t|
-    t.string   "costrange"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "players", force: true do |t|
     t.string   "name"
-    t.integer  "playerid"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "yahooid"
+    t.integer  "cost"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "position_id"
   end
+
+  add_index "players", ["position_id"], name: "index_position_id", using: :btree
 
   create_table "positions", force: true do |t|
     t.string   "positiontype"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "team_id"
   end
+
+  add_index "positions", ["team_id"], name: "index_team_id", using: :btree
 
   create_table "teams", force: true do |t|
     t.string   "teamname"
