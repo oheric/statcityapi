@@ -4,11 +4,13 @@ before_action :set_player, only: [:destroy]
 	def index
 		@players = Player.all
 		@player = Player.new
+		render json: @players, status: 200
 		
 	end
 
 	def new
-		
+		@players= Player.all
+		render json: @players, status: 200
 	end
 
 	def create
