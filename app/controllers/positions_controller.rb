@@ -1,7 +1,7 @@
 class PositionsController < ApplicationController
 	def index
 		@positions = Position.all
-		@position = Position.new
+		render json: @positions, status: 200
 	end
 
 	def new
@@ -12,6 +12,7 @@ class PositionsController < ApplicationController
 		@position = Position.new(position_params)
 		@position.save
 		redirect_to positions_path
+		# render json: @positions, status: 201
 	end
 
 	def position_params
