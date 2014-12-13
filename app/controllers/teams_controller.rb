@@ -1,6 +1,8 @@
 class TeamsController < ApplicationController
+	before_action :set_team, only: [:destroy]
 	def index
 		@teams = Team.all
+
 	end
 
 	def new
@@ -13,7 +15,21 @@ class TeamsController < ApplicationController
 		redirect_to teams_path
 end
 
-def team_params
-	params.require(:team).permit(:teamname)
-end
+def destroy
+    @team.destroy
+    respond_to do |format|
+      format.html { redirect_to teams_url }
+      format.json { head :no_content }
+    end
+  end
+
+
+private
+	def team_params
+		params.require(:team).permit(:teamname)
+	end
+
+	def set_team
+	      @team = Team.find(params[:id])
+	    end
 end

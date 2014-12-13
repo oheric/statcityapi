@@ -1,0 +1,32 @@
+<h1>Name of Players</h1>
+
+<% @players.each do |p| %>
+	<div>Name: <%= p.name %></div><br>
+	<div>Player Id: <%= p.yahooid %></div><br>
+	<div>Cost: <%= p.cost %></div>
+	<% end %>
+
+	
+	<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Player ID</th>
+      <th>Cost</th>
+   
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= player.name %></td>
+        <td><%= player.yahooid %></td>
+        <td><%= player.cost %></td>
+     
+   
+        <td><%= link_to 'Destroy', player, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

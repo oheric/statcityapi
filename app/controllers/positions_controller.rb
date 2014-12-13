@@ -1,7 +1,6 @@
 class PositionsController < ApplicationController
 	def index
 		@positions = Position.all
-		@position = Position.new
 	end
 
 	def new

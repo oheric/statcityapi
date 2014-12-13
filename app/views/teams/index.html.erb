@@ -1,6 +1,21 @@
 <h1>Names of Teams: </h1>
 
-<% @teams.each do |t| %>
-	<div><%= t.teamname%></div>
-	<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Team Name</th>
+      <th></th>
+    </tr>
+  </thead>
 
+  <tbody>
+    <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.teamname %></td>
+     
+   
+        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
