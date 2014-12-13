@@ -8,11 +8,23 @@ Statcityapi::Application.routes.draw do
 
   post 'teams/' => 'teams#create', as: :teams_create
 
+  delete 'teams/:id' => 'teams#destroy', as: :team
+
+  
   get 'positions/' => 'positions#index', as: :positions
 
   get 'positions/new' => 'positions#new', as: :positionsnew
 
   post 'positions/' => 'positions#create', as: :positions_create
+
+  
+  get 'players' => 'players#index', as: :players
+
+  get 'players/new' => 'players#new', as: :playersnew
+
+  post 'players/' => 'players#create', as: :players_create 
+
+  delete 'players/:id' => 'players#destroy', as: :player
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

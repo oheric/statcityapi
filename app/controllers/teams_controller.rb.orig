@@ -2,7 +2,11 @@ class TeamsController < ApplicationController
 	before_action :set_team, only: [:destroy]
 	def index
 		@teams = Team.all
+<<<<<<< HEAD
 		render json: @teams, status: 200
+=======
+
+>>>>>>> d582afedf1293ac08a632807df701901d74c2168
 	end
 
 	def new
@@ -33,7 +37,4 @@ private
 	def set_team
 	      @team = Team.find(params[:id])
 	    end
-def team_params
-	params.require(:team).permit(:teamname)
-end
 end
