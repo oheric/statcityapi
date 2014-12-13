@@ -1,4 +1,12 @@
 Statcityapi::Application.routes.draw do
+
+  root 'home#index', as: :home
+
+  get 'teams/' => 'teams#index', as: :teams
+
+  get 'teams/' => 'teams#index', as: :team
+
+  post 'teams/' => 'teams#create', as: :teams_create
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

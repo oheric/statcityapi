@@ -1,0 +1,19 @@
+<h1>Names of Teams: </h1>
+
+<% @teams.each do |t| %>
+	<div><%= t.teamname%></div>
+	<% end %>
+
+	<h2>Name a New Team</h2>
+
+	<%= form_for @team do |f| %>
+
+	<div class="field">
+		<%= f.label :teamname %><br>
+		<%= f.text_field :teamname %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+	<% end %>
