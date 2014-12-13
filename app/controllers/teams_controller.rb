@@ -1,6 +1,7 @@
 class TeamsController < ApplicationController
 	def index
 		@teams = Team.all
+		render json: @teams, status: 200
 	end
 
 	def new
@@ -11,6 +12,7 @@ class TeamsController < ApplicationController
 		@team = Team.new(team_params)
 		@team.save
 		redirect_to teams_path
+		render json: @teams, status: 201
 end
 
 def team_params
