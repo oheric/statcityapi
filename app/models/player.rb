@@ -1,5 +1,5 @@
 class Player < ActiveRecord::Base
 
-	has_many :positions
-	has_many :teams, through: :positions
+	belongs_to :position
+	
 end
