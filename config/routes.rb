@@ -17,6 +17,8 @@ Statcityapi::Application.routes.draw do
 
   post 'positions/' => 'positions#create', as: :positions_create
 
+  delete 'positions/:id' => 'positions#destroy', as: :position
+
   
   get 'players' => 'players#index', as: :players
 

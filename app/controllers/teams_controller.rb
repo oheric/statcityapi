@@ -2,18 +2,20 @@ class TeamsController < ApplicationController
 	before_action :set_team, only: [:destroy]
 	def index
 		@teams = Team.all
-		render json: @teams, status: 200
+		@team = Team.new
+	
 	end
 
 	def new
-		@team = Team.new
+		@teams = Team.all
+		render json: @teams, status: 200
 	end
 
 	def create
 		@team = Team.new(team_params)
 		@team.save
 		redirect_to teams_path
-		render json: @teams, status: 201
+		
 end
 
 def destroy

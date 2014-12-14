@@ -6,6 +6,10 @@ gem 'rails', '4.0.4'
 # Use postgresql as the database for Active Record
 gem 'pg'
 
+group :production do
+	gem 'rails_12factor', '0.0.2'
+end
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
 
