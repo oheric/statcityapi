@@ -117,7 +117,7 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 4.0.4)
-  rails_12factor
+  rails_12factor (= 0.0.2)
   sass-rails (~> 4.0.2)
   sdoc
   turbolinks
