@@ -6,7 +6,11 @@ Statcityapi::Application.routes.draw do
 
   get 'teams/new' => 'teams#new', as: :teamsnew
 
+  get 'teams/show' => 'teams#show', as: :showteam
+
   post 'teams/' => 'teams#create', as: :teams_create
+
+  post 'teams/new_player' => 'teams#new_player', as: :newplayer
 
   delete 'teams/:id' => 'teams#destroy', as: :team
 
