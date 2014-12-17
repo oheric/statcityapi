@@ -56,14 +56,17 @@
 
 <%stats2 = []%>
 
- 
-
 <%stats2.push(doc.css(".ysprow2").text.split(" ").each_slice(24).to_a)%>
 
 <% "#{stats2}" %>
 
-<% Player.create(:name => stats2[0][0][5], :yahooid => stats2[0][0][1]) %>
+<% stats2[0].each do |i| %>
+<% i.each do |j| %>
 
+<% Playerstat.create(:firstname => j, :lastname => j, :team => j, :gp => j, :minutes => j, :fgm => j, :fga => j, :fgpct => j, :threem => j, :threea => j, :threepct => j, :ftm => j, :fta => j, :ftpct => j, :offreb => j, :defreb => j, :reb => j, :ast => j, :to => j, :stl => j, :blk => j, :pf => j, :ppg => j)%>
+
+<% end %>
+<% end %>
 
 
 

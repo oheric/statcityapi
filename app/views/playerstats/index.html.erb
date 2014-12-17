@@ -1,0 +1,66 @@
+<h1>Name of Players</h1>
+	
+	<table>
+  <thead>
+    <tr>
+      <th>firstname</th>
+      <th>lastname</th>
+      <th>team</th>
+      <th>gp</th>
+      <th>min</th>
+      <th>fgm</th>
+      <th>fga</th>
+      <th>fgpct</th>
+      <th>3m</th>
+      <th>3a</th>
+      <th>3pct</th>
+      <th>ftm</th>
+      <th>fta</th>
+      <th>ftpct</th>
+      <th>offreb</th>
+      <th>defreb</th>
+      <th>reb</th>
+      <th>ast</th>
+      <th>to</th>
+      <th>stl</th>
+      <th>blk</th>
+      <th>pf</th>
+      <th>ppg</th>
+    
+
+   
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @playerstats.each do |s| %>
+      <tr>
+        <td><%= s.firstname %></td>
+        <td><%= s.lastname %></td>
+        <td><%= s.team %></td>
+        <td><%= s.gp %></td>
+        <td><%= s.minutes %></td>
+        <td><%= s.fgm %></td>
+        <td><%= s.fga %></td>
+        <td><%= s.fgpct %></td>
+        <td><%= s.threem %></td>
+        <td><%= s.threea %></td>
+        <td><%= s.threepct %></td>
+        <td><%= s.ftm %></td>
+        <td><%= s.fta %></td>
+        <td><%= s.ftpct %></td>
+        <td><%= s.offreb %></td>
+        <td><%= s.defreb %></td>
+        <td><%= s.reb %></td>
+        <td><%= s.ast %></td>
+        <td><%= s.to %></td>
+        <td><%= s.stl %></td>
+        <td><%= s.blk %></td>
+        <td><%= s.pf %></td>
+        <td><%= s.ppg %></td>
+     
+   
+      </tr>
+    <% end %>
+  </tbody>
+</table>

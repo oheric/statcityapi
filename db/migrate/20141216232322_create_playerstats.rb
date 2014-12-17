@@ -1,4 +1,4 @@
-class CreatePlayerStats < ActiveRecord::Migration
+class CreatePlayerstats < ActiveRecord::Migration
   def change
 
     #create table named users, the plural of user, which is our model name
