@@ -53,22 +53,40 @@
 <%url = "http://sports.yahoo.com/nba/stats/byposition?pos=PG,SG,G,GF,SF,PF,F,FC,C"%>
 <%doc = Nokogiri::HTML(open(url))%>
 
-
+<%stats1 = []%>
 <%stats2 = []%>
 
  
 
-<%stats2.push(doc.css(".ysprow2").text.split(" ").each_slice(24).to_a)%>
+<%doc.css(".ysprow1").each do |a|%>
+<%stats1.push(a.text.split(" ")) %>
+<%end%>
+<%"#{stats1}" %>
 
-<% "#{stats2}" %>
+<%doc.css(".ysprow2").each do |a|%>
+<%stats2.push(a.text.split(" ")) %>
+<%end%>
 
-<%stats2[0].length.times do |b| %>
+<%"#{stats2}" %>
+
+<%stats1.length.times do |b| %>
 
 
 
-<% Playerstat.create(:firstname => stats2[0][b][0], :lastname => stats2[0][b][1], :team => stats2[0][b][2], :gp => stats2[0][b][3], :minutes => stats2[0][b][4], :fgm => stats2[0][b][5], :fga => stats2[0][b][6], :fgpct => stats2[0][b][7], :threem => stats2[0][b][8], :threea => stats2[0][b][9], :threepct => stats2[0][b][10], :ftm => stats2[0][b][11], :fta => stats2[0][b][12], :ftpct => stats2[0][b][13], :offreb => stats2[0][b][14], :defreb => stats2[0][b][15], :reb => stats2[0][b][16], :ast => stats2[0][b][17], :to => stats2[0][b][18], :stl => stats2[0][b][19], :blk => stats2[0][b][20], :pf => stats2[0][b][21], :ppg => stats2[0][b][22])%>
+<% Playerstat.create(:firstname => stats1[b][0], :lastname => stats1[b][1], :team => stats1[b][2], :gp => stats1[b][3], :minutes => stats1[b][4], :fgm => stats1[b][5], :fga => stats1[b][6], :fgpct => stats1[b][7], :threem => stats1[b][8], :threea => stats1[b][9], :threepct => stats1[b][10], :ftm => stats1[b][11], :fta => stats1[b][12], :ftpct => stats1[b][13], :offreb => stats1[b][14], :defreb => stats1[b][15], :reb => stats1[b][16], :ast => stats1[b][17], :to => stats1[b][18], :stl => stats1[b][19], :blk => stats1[b][20], :pf => stats1[b][21], :ppg => stats1[b][22])%>
 
 <% end %>
+
+
+<%stats2.length.times do |b| %>
+
+
+
+<% Playerstat.create(:firstname => stats2[b][0], :lastname => stats2[b][1], :team => stats2[b][2], :gp => stats2[b][3], :minutes => stats2[b][4], :fgm => stats2[b][5], :fga => stats2[b][6], :fgpct => stats2[b][7], :threem => stats2[b][8], :threea => stats2[b][9], :threepct => stats2[b][10], :ftm => stats2[b][11], :fta => stats2[b][12], :ftpct => stats2[b][13], :offreb => stats2[b][14], :defreb => stats2[b][15], :reb => stats2[b][16], :ast => stats2[b][17], :to => stats2[b][18], :stl => stats2[b][19], :blk => stats2[b][20], :pf => stats2[b][21], :ppg => stats2[b][22])%>
+
+<% end %>
+
+
 
 
 
