@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141216232322) do
+ActiveRecord::Schema.define(version: 20141217034009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,26 +31,26 @@ ActiveRecord::Schema.define(version: 20141216232322) do
     t.string   "firstname"
     t.string   "lastname"
     t.string   "team"
-    t.string   "gp"
-    t.string   "minutes"
-    t.string   "fgm"
-    t.string   "fga"
-    t.string   "fgpct"
-    t.string   "threem"
-    t.string   "threea"
-    t.string   "threepct"
-    t.string   "ftm"
-    t.string   "fta"
-    t.string   "ftpct"
-    t.string   "offreb"
-    t.string   "defreb"
-    t.string   "reb"
-    t.string   "ast"
-    t.string   "to"
-    t.string   "stl"
-    t.string   "blk"
-    t.string   "pf"
-    t.string   "ppg"
+    t.float    "gp"
+    t.float    "minutes"
+    t.float    "fgm"
+    t.float    "fga"
+    t.float    "fgpct"
+    t.float    "threem"
+    t.float    "threea"
+    t.float    "threepct"
+    t.float    "ftm"
+    t.float    "fta"
+    t.float    "ftpct"
+    t.float    "offreb"
+    t.float    "defreb"
+    t.float    "reb"
+    t.float    "ast"
+    t.float    "to"
+    t.float    "stl"
+    t.float    "blk"
+    t.float    "pf"
+    t.float    "ppg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

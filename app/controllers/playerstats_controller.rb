@@ -4,4 +4,9 @@ class PlayerstatsController < ApplicationController
 
 		@playerstats = Playerstat.all
 		end
+
+		def show
+			@playerstats = Playerstat.all
+			render json: @playerstats, status: 200
+		end
 	end

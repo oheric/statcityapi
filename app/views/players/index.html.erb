@@ -56,18 +56,19 @@
 
 <%stats2 = []%>
 
+ 
+
 <%stats2.push(doc.css(".ysprow2").text.split(" ").each_slice(24).to_a)%>
 
 <% "#{stats2}" %>
 
-<% stats2[0].each do |i| %>
-<% i.each do |j| %>
+<%stats2[0].length.times do |b| %>
 
-<% Playerstat.create(:firstname => j, :lastname => j, :team => j, :gp => j, :minutes => j, :fgm => j, :fga => j, :fgpct => j, :threem => j, :threea => j, :threepct => j, :ftm => j, :fta => j, :ftpct => j, :offreb => j, :defreb => j, :reb => j, :ast => j, :to => j, :stl => j, :blk => j, :pf => j, :ppg => j)%>
+
+
+<% Playerstat.create(:firstname => stats2[0][b][0], :lastname => stats2[0][b][1], :team => stats2[0][b][2], :gp => stats2[0][b][3], :minutes => stats2[0][b][4], :fgm => stats2[0][b][5], :fga => stats2[0][b][6], :fgpct => stats2[0][b][7], :threem => stats2[0][b][8], :threea => stats2[0][b][9], :threepct => stats2[0][b][10], :ftm => stats2[0][b][11], :fta => stats2[0][b][12], :ftpct => stats2[0][b][13], :offreb => stats2[0][b][14], :defreb => stats2[0][b][15], :reb => stats2[0][b][16], :ast => stats2[0][b][17], :to => stats2[0][b][18], :stl => stats2[0][b][19], :blk => stats2[0][b][20], :pf => stats2[0][b][21], :ppg => stats2[0][b][22])%>
 
 <% end %>
-<% end %>
-
 
 
 

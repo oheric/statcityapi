@@ -33,6 +33,7 @@ Statcityapi::Application.routes.draw do
   delete 'players/:id' => 'players#destroy', as: :player
 
   get 'playerstats' => 'playerstats#index', as: :playerstats
+  get 'playerstats/show' => 'playerstats#show', as: :playerstatsshow 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
